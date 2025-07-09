@@ -1,0 +1,867 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f0f0f;
+    color: #f0f0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  
+    /* Glass effect */
+    background: rgba(0, 0, 0, 0.3);         /* transparent dark */
+    backdrop-filter: blur(12px);           /* the blur effect */
+    -webkit-backdrop-filter: blur(12px);   /* Safari support */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+
+.logo {
+    font-size: 1.5rem;
+    color: #00f6ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    color: #00f6ff;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* 🟢 semi-transparent dark layer */
+    margin: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    margin-top: 80px;
+  }
+  
+  .hero-content {
+    z-index: 1;
+  }
+  
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-content p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: #00f6ff;
+    color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: transform 0.3s;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Section Container */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about h2,
+  .services h2 {
+    font-size: 2rem;
+    color: #00f6ff;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .about p {
+    max-width: 700px;
+    margin: auto;
+    color: #ccc;
+    font-size: 1.1rem;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    animation: fadeInUp 2s ease-out;
+  }
+  
+  .service-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    box-shadow: 0 0 0 transparent;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 225, 255, 0.2);
+  }
+  
+  .service-card h3 {
+    color: #00eeff;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card p {
+    color: #ccc;
+  }
+  
+  .contact {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 2rem;
+    border-radius: 12px;
+    padding: 4rem 2rem;
+  }
+  
+  
+  .contact h2 {
+    color: #00f6ff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact p {
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #f0f0f0;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  
+  /* Animation when typing */
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:focus + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    top: -0.6rem;
+    left: 0.8rem;
+    background: #111;
+    padding: 0 0.3rem;
+    color: #00f6ff;
+    font-size: 0.75rem;
+  }
+
+  /* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #00f6ff;
+    border-radius: 2px;
+  }
+  
+  /* Responsive Nav */
+  @media (max-width: 768px) {
+    .nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #111;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .nav.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
+  :root {
+    --bg-color: #0f0f0f;
+    --text-color: #f0f0f0;
+    --accent-color: #00f6ff;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #111;
+    --accent-color: #007acc;
+  }
+  
+  /* Toggle Button */
+  .theme-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    transform: rotate(15deg);
+  }
+
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: #0f0f0f;
+  }
+
+  /* Particle background fixed behind everything */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind all content */
+    pointer-events: none; /* So clicks go through it */
+    background: transparent; /* No background color here */
+  }
+
+  section {
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent dark background */
+    border-radius: 8px;
+    margin: 2rem;
+    padding: 2rem;
+  }
+
+  .about, .services {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 4rem 2rem;
+    margin: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+
+  .about p, .services p {
+    color: #e0e0e0;
+  }
+  
+  .auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .auth-form {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    color: #fff;
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00f6ff;
+  }
+  
+  .auth-form .form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .auth-form label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #888;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  
+  .auth-form input:focus + label,
+  .auth-form input:not(:placeholder-shown) + label {
+    top: -0.8rem;
+    left: 0.8rem;
+    font-size: 0.75rem;
+    background: #000;
+    padding: 0 0.4rem;
+    color: #00f6ff;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    color: #00f6ff;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .dashboard {
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  /* Particle Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #0f0f0f;
+  }
+  
+  /* Center Login Form */
+  .auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  /* Glassy Form Box */
+  .auth-form {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 400px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    position: relative;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    color: #00f6ff;
+    margin-bottom: 2rem;
+  }
+  
+  /* Floating Labels */
+  .form-group {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+  }
+  
+  .auth-form label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+    background: transparent;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+  
+  .auth-form input:focus + label,
+  .auth-form input:not(:placeholder-shown) + label {
+    top: -0.7rem;
+    left: 0.8rem;
+    font-size: 0.75rem;
+    color: #00f6ff;
+    background: #0f0f0f;
+    padding: 0 0.3rem;
+  }
+  
+  /* Toggle Password */
+  .toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    color: #00f6ff;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  /* Button */
+  .auth-form .btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #00f6ff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-form .btn:hover {
+    background-color: #00c7cc;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .dashboard {
+    padding: 5rem 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dashboard-container {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    animation: fadeIn 1s ease;
+  }
+  
+  .dashboard h2 {
+    text-align: center;
+    color: #00f6ff;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    flex: 1 1 30%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .card h3 {
+    color: #00f6ff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card p {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .dashboard .btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #00f6ff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .dashboard .btn:hover {
+    background-color: #00c7cc;
+  }
+
+  .dashboard-chart {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    margin-top: 2rem;
+  }
+  
+  .dashboard-chart h3 {
+    color: #00f6ff;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  #activityChart {
+    max-width: 100%;
+  }
+
+  .explore-btn {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #00f6ff;
+    border: 2px solid #00f6ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.4s ease;
+    z-index: 1;
+  }
+  
+  .explore-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00f6ff, transparent);
+    transform: translateY(-50%) rotate(0deg);
+    animation: shine 3s infinite linear;
+    z-index: -1;
+    opacity: 0.5;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -50%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: -50%;
+    }
+  }
+  
+  .explore-btn:hover {
+    background-color: #41eff5;
+    color: #000;
+    box-shadow: 0 0 20px #00f6ff, 0 0 40px #00f6ff;
+    transform: scale(1.05);
+  }
+  
+  .explore-btn {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    color: #00f6ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid #00f6ff;
+    border-radius: 50px;
+    background: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+  
+  /* Shine effect */
+  .explore-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -75%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00f6ff, transparent);
+    transform: translateY(-50%);
+    animation: shine 3s linear infinite;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  
+  @keyframes shine {
+    0% { left: -75%; }
+    50% { left: 100%; }
+    100% { left: -75%; }
+  }
+  
+  /* Glow on hover */
+  .explore-btn:hover {
+    background-color: #00f6ff;
+    color: #000;
+    box-shadow: 0 0 15px #00f6ff, 0 0 40px #00f6ff;
+    transform: scale(1.05);
+  }
+  
+  /* Ripple effect */
+  .explore-btn::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 246, 255, 0.4);
+    display: block;
+    border-radius: 50%;
+    transform: scale(1);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.6s ease-out;
+  }
+  
+  .explore-btn:active::after {
+    left: 50%;
+    top: 50%;
+    transform: scale(10);
+    opacity: 0;
+    transition: 0s;
+  }
+
+  
+  /* Base navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.logo {
+  color: #00f6ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00f6ff;
+}
+
+/* Hamburger menu icon */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #00f6ff;
+  display: block;
+  content: '';
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.nav-toggle-label span::before {
+  top: -8px;
+}
+.nav-toggle-label span::after {
+  top: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + nav {
+    display: block;
+  }
+}

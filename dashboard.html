@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | YourBusiness</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">YourBusiness</h1>
+  
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <!-- Dashboard Content -->
+  <section class="dashboard">
+    <div class="dashboard-container">
+
+      <h2>Welcome back, User 👋</h2>
+
+      <div class="dashboard-cards">
+        <div class="card">
+          <h3>Profile Views</h3>
+          <p>1,254</p>
+        </div>
+        <div class="card">
+          <h3>Projects</h3>
+          <p>8 Active</p>
+        </div>
+        <div class="card">
+          <h3>Messages</h3>
+          <p>12 Unread</p>
+        </div>
+      </div>
+
+      <!-- 📊 Chart Section -->
+      <div class="dashboard-chart">
+        <h3>User Activity (Monthly)</h3>
+        <canvas id="activityChart"></canvas>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+  <script>if (document.getElementById("particles-js")) {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00f6ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00f6ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  }
+  </script>
+</body>
+</html>
+

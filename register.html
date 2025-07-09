@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | YourBusiness</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">YourBusiness</h1>
+  
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <!-- Register Form -->
+  <div class="auth-container">
+    <form class="auth-form">
+      <h2>Register</h2>
+
+      <div class="form-group">
+        <input type="text" id="name" required placeholder=" " />
+        <label for="name">Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="register-email" required placeholder=" " />
+        <label for="register-email">Email</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="register-password" required placeholder=" " />
+        <label for="register-password">Password</label>
+        <button type="button" class="toggle-password"><i class='bx bxs-show'></i></button>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>if (document.getElementById("particles-js")) {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00f6ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00f6ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  }
+  </script>
+  <script>// Toggle password visibility
+    document.querySelectorAll('.toggle-password').forEach(button => {
+      button.addEventListener('click', () => {
+        const input = button.previousElementSibling;
+        if (input.type === 'password') {
+          input.type = 'text';
+          button.textContent = '';
+        } else {
+          input.type = 'password';
+          button.textContent = '';
+        }
+      });
+    });
+    </script>
+</body>
+</html>
+
